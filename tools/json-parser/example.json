@@ -1,0 +1,11 @@
+{
+  "page": "assignment1",
+  "words": ["one", "two", "three"],
+  "percentages": {
+    "one": 0.33,
+    "three": 0,
+    "two": 0.66
+  },
+  "special": ["one", "two", null],
+  "extraSpecial": [1, 2, "3"]
+}
