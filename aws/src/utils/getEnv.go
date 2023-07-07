@@ -9,6 +9,7 @@ import (
 type Config struct {
 	Configure Configure `yaml:"configure"`
 	Policy    Policy    `yaml:"policy"`
+	Instance  Instance  `yaml:"isntance"`
 }
 
 func getEnv() *viper.Viper {
@@ -55,4 +56,20 @@ func GetPolicyConfigure() Policy {
 
 	v.Unmarshal(&config)
 	return config.Policy
+}
+
+/*
+instance
+*/
+type Instance struct {
+	AMI  string `yaml:"ami"`
+	Type string `yaml:"type"`
+}
+
+func GetEC2Configure() Instance {
+	v := getEnv()
+	var config Config
+
+	v.Unmarshal(&config)
+	return config.Instance
 }
